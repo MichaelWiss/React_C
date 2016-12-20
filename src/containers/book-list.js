@@ -29,4 +29,8 @@ return {
   };
 }
 
-export default connect(mapStateToProps)(BookList);
+function mapDispatchToProps(dispatch) {
+	return bindActionCreators({ selectBook: selectBook }, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(BookList);
